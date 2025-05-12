@@ -25,13 +25,3 @@ docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{}
 }}:${{ github.run_number }}
 - name: 'Deploy to Azure Container Instances'
 uses: 'azure/aci-deploy@v1'
-with:
-resource-group: ${{ secrets.RESOURCE_GROUP }}
-dns-name-label: ${{ secrets.RESOURCE_GROUP }}
-image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secr
-github.run_number }}
-registry-login-server: ${{
-secrets.REGISTRY_LOGIN_SE registry-username: ${{
-secrets.REGISTRY_USERNAME }} registry-password: ${{
-secrets.REGISTRY_PASSWORD }} name: getting-startedgithub
-location: 'west europe
